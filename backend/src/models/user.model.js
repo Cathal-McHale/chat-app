@@ -2,26 +2,27 @@ import mongoose from "mongoose"
 
 //create user schema with required fields
 const userSchema = new mongoose.Schema({
-    email:{
+    email: {
+        type: String,
         required: true,
-        unique: true,
+        unique: true
     },
-    fullName:{
+    fullName: {
         type: String,
         required: true
     },
-    password:{
+    password: {
         type: String,
         required: true,
-        minLength: 6,
+        minLength: 6
     },
-    profilePic:{
+    profilePic: {
         type: String,
         default: ""
-    },
+    }
 },
 //set timestamps for account info
-{timestamps: true}
+{ timestamps: true }
 );
 //create model with mongoose
 const User = mongoose.model("User", userSchema);
