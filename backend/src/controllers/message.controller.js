@@ -36,7 +36,7 @@ export const getMessages = async(req, res) =>{
 
 }
 
-export const sendMessgae = async(req, res)=>{
+export const sendMessage = async(req, res)=>{
     try {
         const {text, image} = req.body
         const {id: recieverId} = req.params
