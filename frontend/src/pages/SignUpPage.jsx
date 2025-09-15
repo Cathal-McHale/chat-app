@@ -83,20 +83,20 @@ const SignUpPage = () => {
                 }
               />
             </div>
-            <div className="form-control">
-              <label>
-                <span className="label-text font-medium">Password</span>
+            <div className="relative">
+              <label className="block mb-2 text-purple-700 font-semibold">
+                Password
               </label>
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Lock className="size-5 text-blue-400" />
+                <Lock className="size-5 text-purple-400" />
               </div>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  className="pl-10 py-2 px-4 w-full rounded-lg border border-purple-400 focus:border-purple-600 focus:ring-2 focus:ring-purple-200 text-purple-900 bg-purple-50 placeholder-purple-400"
-                  placeholder="Enter your password"
-                  value={formData.password}
-                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                />
+              <input
+                type={showPassword ? "text" : "password"}
+                className="pl-10 py-2 px-4 w-full rounded-lg border border-purple-400 focus:border-purple-600 focus:ring-2 focus:ring-purple-200 text-purple-900 bg-purple-50 placeholder-purple-400"
+                placeholder="Enter your password"
+                value={formData.password}
+                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              />
               <button
                 type="button"
                 className="absolute inset-y-0 right-0 pr-3 flex items-center"
