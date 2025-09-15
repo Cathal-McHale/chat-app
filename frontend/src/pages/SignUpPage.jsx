@@ -34,7 +34,7 @@ const SignUpPage = () => {
     }
   return (
     <div className="min-h-screen grid lg:grid-cols-2 bg-gradient-to-br from-blue-100 via-white to-purple-100">
-      {/* left side */}
+      {/* Left side */}
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8 bg-white rounded-xl shadow-2xl p-8 border border-blue-200">
           <div className="flex flex-col items-center space-y-2">
@@ -46,12 +46,9 @@ const SignUpPage = () => {
               Get started with your free account.
             </p>
           </div>
-          {/* Form fields go here */}
           <form onSubmit={handleSubmit} className="space-y-6 mt-6">
             <div className="relative">
-              <label className="block mb-2 text-blue-700 font-semibold">
-                Full Name
-              </label>
+              <label className="block mb-2 text-blue-700 font-semibold">Full Name</label>
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <User className="size-5 text-blue-400" />
               </div>
@@ -60,16 +57,11 @@ const SignUpPage = () => {
                 className="pl-10 py-2 px-4 w-full rounded-lg border border-blue-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-blue-900 bg-blue-50 placeholder-blue-300"
                 placeholder="John Doe"
                 value={formData.fullName}
-                onChange={(e) =>
-                  setFormData({ ...formData, fullName: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
               />
             </div>
-
             <div className="relative">
-              <label className="block mb-2 text-blue-700 font-semibold">
-                Email
-              </label>
+              <label className="block mb-2 text-blue-700 font-semibold">Email</label>
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Mail className="size-5 text-blue-400" />
               </div>
@@ -78,15 +70,11 @@ const SignUpPage = () => {
                 className="pl-10 py-2 px-4 w-full rounded-lg border border-blue-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 text-blue-900 bg-blue-50 placeholder-blue-300"
                 placeholder="youremail@example.com"
                 value={formData.email}
-                onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
             </div>
             <div className="relative">
-              <label className="block mb-2 text-purple-700 font-semibold">
-                Password
-              </label>
+              <label className="block mb-2 text-purple-700 font-semibold">Password</label>
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Lock className="size-5 text-purple-400" />
               </div>
@@ -110,33 +98,29 @@ const SignUpPage = () => {
               </button>
             </div>
             <button
-            type="submit"
-            className='btn btn-primary w-full'
-            disabled={isSigningUp}>
-                {isSigningUp ? (
-                    <>
-                    <Loader2 className="size-5 animate-spin"/>
-                    Loading...
-                    </>    
-            ) : (
-                "Create Account"
-            )
-                }
-                </button>                    
-
+              type="submit"
+              className="btn btn-primary w-full"
+              disabled={isSigningUp}
+            >
+              {isSigningUp ? (
+                <>
+                  <Loader2 className="size-5 animate-spin" /> Loading...
+                </>
+              ) : (
+                'Create Account'
+              )}
+            </button>
           </form>
-
-          <div className='text-center'>
-            <p className='text-base-content/60'>
-            Already have an account? {""}
-            <Link to="/login" className='link link-primary'>
-            Sign In
-            </Link></p>
-
+          <div className="text-center">
+            <p className="text-base-content/60">
+              Already have an account?{' '}
+              <Link to="/login" className="link link-primary">
+                Sign In
+              </Link>
+            </p>
           </div>
         </div>
       </div>
-
       {/* Right side */}
       <div className="flex items-center justify-center bg-white rounded-xl shadow-2xl m-8 p-8 border border-blue-200">
         <AuthImagePattern
