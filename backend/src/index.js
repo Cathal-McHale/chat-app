@@ -21,9 +21,13 @@ app.use(
 );
 
 app.use("/api/auth", authRoutes)
-app.use("/api/message", messageRoutes);
+app.use("/api/messages", messageRoutes);
 
-app.listen(PORT, () => {
-    console.log("Server is running on port number: " + PORT)
-    connectDB();
-})
+import { initSocket } from "./lib/socket.js";
+
+const server = app.listen(PORT, () => {
+  console.log("Server is running on port number: " + PORT)
+  connectDB();
+});
+
+initSocket(server);
