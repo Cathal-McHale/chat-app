@@ -6,5 +6,24 @@
   "dependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6"
-  }
+  },
+  "name": "chat-app",
+  "version": "1.0.0",
+  "main": "postcss.config.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cathal-McHale/chat-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cathal-McHale/chat-app/issues"
+  },
+  "homepage": "https://github.com/Cathal-McHale/chat-app#readme",
+  "description": ""
 }
