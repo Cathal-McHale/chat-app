@@ -52,7 +52,7 @@ const ChatContainer = () => {
     <div className="flex-1 flex flex-col overflow-auto">
       <ChatHeader />
 
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-blue-50 dark:bg-base-200 rounded-lg">
         {messages.map((message) => (
           <div
             key={message._id}
@@ -61,8 +61,8 @@ const ChatContainer = () => {
             }`}
             ref={messageEndRef}
           >
-            <div className=" chat-image avatar">
-              <div className="size-10 rounded-full border">
+            <div className="chat-image avatar">
+              <div className="size-10 rounded-full border border-blue-200 dark:border-base-300">
                 <img
                   src={
                     message.senderId === authUser._id
@@ -73,20 +73,23 @@ const ChatContainer = () => {
                 />
               </div>
             </div>
-            <div className="chat-header mb-1">
-              <time className="text-xs opacity-50 ml-1">
+            <div className="chat-header mb-1 flex items-center gap-2">
+              <span className="font-semibold text-xs text-zinc-700 dark:text-zinc-300">
+                {message.senderId === authUser._id ? "You" : selectedUser.fullName}
+              </span>
+              <time className="text-xs opacity-60 ml-1">
                 {formatMessageTime(message.createdAt)}
               </time>
             </div>
-            <div className="chat-bubble flex flex-col">
+            <div className="chat-bubble flex flex-col bg-white dark:bg-base-100 shadow-md px-4 py-2 rounded-xl">
               {message.image && (
                 <img
                   src={message.image}
                   alt="Attachment"
-                  className="sm:max-w-[200px] rounded-md mb-2"
+                  className="sm:max-w-[200px] rounded-md mb-2 border border-blue-100 dark:border-base-300"
                 />
               )}
-              {message.text && <p>{message.text}</p>}
+              {message.text && <p className="text-base text-zinc-800 dark:text-zinc-200">{message.text}</p>}
             </div>
           </div>
         ))}
