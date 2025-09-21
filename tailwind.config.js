@@ -5,4 +5,9 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,vue,svelte}"],
   theme: { extend: {} },
   plugins: [daisyui],
+  daisyui: {
+    themes: [
+      "light", "dark", "cupcake","retro"
+    ]
+  }
 };
